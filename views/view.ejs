@@ -1,0 +1,90 @@
+<% if (!isLoggedIn){ %>
+<nav
+  style="
+    padding: 20px;
+    background-color: rgb(49, 49, 49);
+    color: white;
+    text-decoration: none;
+    margin: 2% 2% 2% 2%;
+  "
+>
+  <a
+    href="/"
+    style="
+      text-decoration: none;
+      text-align: center;
+      color: white;
+      padding: 10px;
+    "
+    >Report an Incident</a
+  ><a href="/dashboard" style="
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  padding: 10px;
+  ">Dashboard</a>
+  <a
+    href="/logout"
+    style="
+      text-decoration: none;
+      text-align: center;
+      color: white;
+      padding: 10px;
+    "
+    >Logout</a
+  >
+</nav>
+<% } else { %>
+<nav
+  style="
+    padding: 20px;
+    background-color: rgb(49, 49, 49);
+    color: white;
+    text-decoration: none;
+    margin: 2% 2% 2% 2%;
+  "
+>
+  <a
+    href="/"
+    style="
+      text-decoration: none;
+      text-align: center;
+      color: white;
+      padding: 10px;
+    "
+    >Report an Incident</a
+  >
+  <a
+    href="/login"
+    style="
+      text-decoration: none;
+      text-align: center;
+      color: white;
+      padding: 10px;
+    "
+    >Login</a
+  >
+</nav>
+<% } %>
+<div
+  style="
+    width: 75%;
+    margin-left: 11%;
+    margin-bottom: 10px;
+    align-items: center;
+    text-align: center;
+    border: 2px solid rgb(49, 49, 49);
+    padding: 30px;
+    margin-bottom: 2%;
+  "
+>
+  <h4 style="color: rgb(49, 49, 49); text-align: center">Name</h4>
+  <p><%= ticket.name %></p>
+  <h4 style="color: rgb(49, 49, 49); text-align: center">Phone</h4>
+  <p><%= ticket.phone %></p>
+  <h4 style="color: rgb(49, 49, 49); text-align: center">Image :</h4>
+  <img src="/uploads/<%= ticket.imageName %>" style="height: 50%; width:50%;" />
+  <h4 style="color: rgb(49, 49, 49); text-align: center">Description</h4>
+  <p><%= ticket.description %></p>
+</div>
+<%- include('shared/footer.ejs') -%>

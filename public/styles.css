@@ -1,0 +1,76 @@
+.headingcontainer{
+  display: flex;
+  align-items: center;
+  margin-left: 30%;
+}
+
+nav {
+  padding: 20px;
+  background-color: rgb(49, 49, 49);
+  color: white;
+  text-decoration: none;
+  margin: 2% 2% 2% 2%;
+}
+
+nav a {
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  padding: 10px;
+}
+
+h1 {
+  color: rgb(49, 49, 49);
+  text-align: center;
+}
+
+.container {
+  width: 60%;
+  margin-left: 18%;
+  margin-bottom: 10px;
+  align-items: center;
+  text-align: center;
+  border: 2px solid rgb(49, 49, 49);
+  padding: 30px;
+  margin-bottom: 2%;
+}
+
+label {
+  width: 200px;
+  display: inline-block;
+  text-align: left;
+}
+
+input {
+  text-align: center;
+  justify-content: left;
+}
+
+table,
+th,
+td {
+  border: 2px solid rgb(49, 49, 49);
+  padding: 10px;
+  margin-left: 12%;
+}
+
+td a {
+  color: rgb(49, 49, 49);
+}
+
+.wrapper {
+  margin: 10px;
+}
+
+.wrapper label {
+  display: inline-block;
+  width: 150px;
+}
+
+footer {
+  padding: 20px;
+  background-color: rgb(49, 49, 49);
+  text-align: center;
+  color: white;
+  margin: 2% 2% 2% 2%;
+}

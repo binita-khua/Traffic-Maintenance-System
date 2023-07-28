@@ -1,0 +1,84 @@
+
+
+<% if (!isLoggedIn){ %>
+  <nav
+    style="
+      padding: 20px;
+      background-color: rgb(49, 49, 49);
+      color: white;
+      text-decoration: none;
+      margin: 2% 2% 2% 2%;
+    "
+  >
+    <a
+      href="/"
+      style="
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        padding: 10px;
+      "
+      >Report an Incident</a
+    >
+    <a href="/dashboard" style="
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  padding: 10px;
+  ">Dashboard</a>
+    <a
+      href="/logout"
+      style="
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        padding: 10px;
+      "
+      >Logout</a
+    >
+  </nav>
+  
+  <% } else { %>
+  <nav
+    style="
+      padding: 20px;
+      background-color: rgb(49, 49, 49);
+      color: white;
+      text-decoration: none;
+      margin: 2% 2% 2% 2%;
+    "
+  >
+    <a
+      href="/"
+      style="
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        padding: 10px;
+      "
+      >Report an Incident</a
+    >
+    <a
+      href="/login"
+      style="
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        padding: 10px;
+      "
+      >Login</a
+    >
+  </nav>
+  <% } %>
+<h1 style="color: rgb(49, 49, 49); text-align: center">Your Ticket has been Edited Successfully!</h1>
+<footer
+  style="
+    padding: 20px;
+    background-color: rgb(49, 49, 49);
+    text-align: center;
+    color: white;
+    margin: 2% 2% 2% 2%;
+  "
+>
+  &copy Binita Khua
+</footer>

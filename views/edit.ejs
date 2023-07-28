@@ -1,0 +1,161 @@
+<% if (!isLoggedIn){ %>
+<nav
+  style="
+    padding: 20px;
+    background-color: rgb(49, 49, 49);
+    color: white;
+    text-decoration: none;
+    margin: 2% 2% 2% 2%;
+  "
+>
+  <a
+    href="/"
+    style="
+      text-decoration: none;
+      text-align: center;
+      color: white;
+      padding: 10px;
+    "
+    >Report an Incident</a
+  >
+  <a href="/dashboard" style="
+text-decoration: none;
+text-align: center;
+color: white;
+padding: 10px;
+">Dashboard</a>
+  <a
+    href="/logout"
+    style="
+      text-decoration: none;
+      text-align: center;
+      color: white;
+      padding: 10px;
+    "
+    >Logout</a
+  >
+</nav>
+<% } else { %>
+<nav
+  style="
+    padding: 20px;
+    background-color: rgb(49, 49, 49);
+    color: white;
+    text-decoration: none;
+    margin: 2% 2% 2% 2%;
+  "
+>
+  <a
+    href="/"
+    style="
+      text-decoration: none;
+      text-align: center;
+      color: white;
+      padding: 10px;
+    "
+    >Report an Incident</a
+  >
+  <a
+    href="/login"
+    style="
+      text-decoration: none;
+      text-align: center;
+      color: white;
+      padding: 10px;
+    "
+    >Login</a
+  >
+</nav>
+<% } %>
+<h1 style="color: rgb(49, 49, 49); text-align: center">Update a Report</h1>
+
+<div
+  style="
+    width: 75%;
+    margin-left: 11%;
+    margin-bottom: 10px;
+    align-items: center;
+    text-align: center;
+    border: 2px solid rgb(49, 49, 49);
+    padding: 30px;
+    margin-bottom: 2%;
+  "
+>
+  <form
+    name="myForm"
+    method="post"
+    action="/edit/<%= ticket._id%>"
+    enctype="multipart/form-data"
+  >
+    <span id="errors"
+      ><% if(typeof errors !== 'undefined') { for(let error of errors) { %> <%=
+      error.msg %> <% } } %></span
+    >
+    <BR /><br />
+    <label style="width: 200px; display: inline-block; text-align: left"
+      >Name</label
+    >
+    <input
+      id="name"
+      placeholder="First Last"
+      type="text"
+      name="name"
+      value="<%= ticket.name %>"
+      style="text-align: center; justify-content: left"
+    /><br /><br />
+    <label style="width: 200px; display: inline-block; text-align: left"
+      >Phone</label
+    >
+    <input
+      id="phone"
+      placeholder="Phone"
+      type="text"
+      name="phone"
+      value="<%= ticket.phone %>"
+      style="text-align: center; justify-content: left"
+    /><br /><br />
+    <label style="width: 200px; display: inline-block; text-align: left"
+      >Upload an Image</label
+    >
+    <span><%= ticket.imageName %></span><br /><br />
+    <input
+      placeholder="0"
+      type="file"
+      name="myimage"
+      value="<%= ticket.imageName %>"
+      style="text-align: center; justify-content: left"
+    /><br /><br />
+    <div class="wrapper" style= "margin: 10px;">
+      <label style="width: 200px; display: inline-block; text-align: left"
+      >Description</label>
+      <input type="text" id="description" name="description" value="<%=ticket.description%>"/>
+    </div>
+    <br /><br />
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<footer
+  style="
+    padding: 20px;
+    background-color: rgb(49, 49, 49);
+    text-align: center;
+    color: white;
+    margin: 2% 2% 2% 2%;
+  "
+>
+  &copy Binita Khua
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script src="public/js/tinymce/jquery.tinymce.min.js"></script>
+<script src="public/js/tinymce/tinymce.min.js"></script>
+
+<script type="application/javascript" src= "/tinymce/tinymce.min.js"></script>
+<script>
+  tinymce.init({
+    selector: "#description",
+    height: 500,
+    menubar: false,
+  });
+</script>

@@ -1,0 +1,21 @@
+<%- include('shared/header.ejs') -%> <%- include('shared/nav.ejs') -%>
+<div class="container">
+  <form name="admin" method="post" action="/login">
+    <br />
+    <br />
+    <label>Username</label>
+    <input type="text" id="username" name="username" placeholder="UserName" />
+    <br /><br />
+    <label>Password</label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      placeholder="Password"
+    />
+    <br /><br />
+    <button type="submit">Submit</button>
+    <br /><br />
+  </form>
+</div>
+<%- include('shared/footer.ejs') -%>

@@ -1,0 +1,28 @@
+<%- include('shared/header.ejs') -%> <%- include('admin/adminnav.ejs') -%>
+<h1>Dashboard</h1>
+<div class="container">
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Description</th>
+      <th>View</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    <% for(myTicket of mytickets){ %>
+    <tr>
+      <td><%= myTicket._id %></td>
+      <td><%= myTicket.name %></td>
+      <td><%= myTicket.phone %></td>
+      <td><%= myTicket.description %></td>
+      <td><a href="<%= `/view/${myTicket._id}` %>">View</a></td>
+      <td><a href="<%= `/edit/${myTicket._id}` %>">Edit</a></td>
+      <td><a href="<%= `/deletesuccess/${myTicket._id}` %>">Delete</a></td>
+    </tr>
+    <% } %>
+  </table>
+</div>
+<%- include('shared/footer.ejs') -%>
+
